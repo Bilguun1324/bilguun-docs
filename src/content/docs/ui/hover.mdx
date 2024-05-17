@@ -48,7 +48,7 @@ export const MagneticHover = (props: HoverProps) => {
 
   const mouseMove = (e: any) => {
     const { clientX, clientY } = e;
-    const { top, left, width, height } = ref?.current.getBoundingClientRect();
+    const { top, left, width, height } = ref.current.getBoundingClientRect();
     const x = clientX - (left + width / 2);
     const y = clientY - (top + height / 2);
     setPosition({ x, y });

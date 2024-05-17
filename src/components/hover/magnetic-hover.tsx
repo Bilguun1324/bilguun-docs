@@ -8,11 +8,11 @@ type HoverProps = {
 export const MagneticHover = (props: HoverProps) => {
   const { children } = props;
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   const mouseMove = (e: any) => {
     const { clientX, clientY } = e;
-    const { top, left, width, height } = ref.current.getBoundingClientRect();
+    const { top, left, width, height } = ref.current?.getBoundingClientRect() || { top: 0, left: 0, width: 0, height: 0 };
     const x = clientX - (left + width / 2);
     const y = clientY - (top + height / 2);
     setPosition({ x, y });
