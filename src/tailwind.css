@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-Add additional Tailwind styles to this file, for example with @layer:
-https://tailwindcss.com/docs/adding-custom-styles#using-css-and-layer
-*/
+@layer components {
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    height: 100vh;
+    overflow-y: auto;
+    width: 100%;
+  }
+}
